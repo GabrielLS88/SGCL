@@ -1,0 +1,74 @@
+.bodyAlertaSucess{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.blocoAlertaSucess {
+    width: 30%;
+    height: 30%;
+    background-color: #FDFDFD;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    border-radius: 1rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    animation: alertaDescendo 1s forwards;
+    box-shadow: 0 80px 150px rgba(0, 0, 0, 0.2), 0 15px 40px rgba(0, 0, 0, 0.19);
+}
+
+@keyframes alertaDescendo {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+.blocoMensagemDoAlertaSucess{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 0.2rem;
+    margin-bottom: 0.8rem;
+    flex-direction: column;
+}
+
+.blocoCheck{
+    width: 50px;
+    height: 50px;
+    color: wheat;
+    background-color:#2ee9a6 ;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.bi-check-lg{
+    color: wheat;
+    font-size: 40px;
+}
+
+.mensagemAlertaSucess{
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-top: 1rem;
+}
+
+

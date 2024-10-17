@@ -1,0 +1,199 @@
+.bodyCadastro {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.ladoImagem {
+  width: 50%;
+  height: 100%;
+  display: flex;
+}
+
+.ladoImagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.espacoCadastro {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.blocoDosInputsCadastro {
+  width: 30%;
+  height: auto;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.blocoDosInputsCadastro input {
+  width: 90%;
+  height: 2rem;
+  border: 0;
+  border-bottom: 1px solid black;
+  margin-top: 1rem;
+  outline: none;
+  padding: 0.2rem 0.4rem 0.2rem;
+  transition: 0.3s ease-in-out;
+}
+
+.blocoDosInputsCadastro input::placeholder {
+  color: black;
+  font-weight: 300;
+}
+
+.blocoDosInputsCadastro input:focus {
+  border-bottom: 1px solid #2E30E9;
+}
+
+.inputComVisualizadorDeSenhaCadastro {
+  width: 100%;
+  height: 2rem;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.inputComVisualizadorDeSenhaCadastro input {
+  width: 90%;
+  height: 100%;
+  border: 0;
+  border-bottom: 1px solid black;
+  outline: none;
+  padding: 0.2rem 0.4rem 0.2rem;
+  margin-bottom: 0;
+  background: transparent;
+}
+
+#tituloPagina {
+  width: auto;
+  height: auto;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+#tituloInfoCadastro {
+  width: auto;
+  height: auto;
+  font-size: 1.3rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.blocoDosInputsCadastro input {
+  width: 90%;
+  height: 2rem;
+  border: 0;
+  border-bottom: 1px solid black;
+  margin-bottom: 2rem;
+  outline: none;
+  padding: 0.2rem 0.4rem 0.2rem;
+  transition: 0.3s ease-in-out;
+}
+
+.blocoDosInputs input::placeholder {
+  color: black;
+  font-weight: 300;
+}
+
+.blocoDosInputs input:focus {
+  border-bottom: 1px solid #2E30E9;
+}
+
+#btnCadastrar {
+  width: 90%;
+  height: 3rem;
+  background-color: #2E30E9;
+  color: white;
+  border: 0;
+  border-radius: 0.3rem;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+#btnCadastrar:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#btnCadastrar:focus {
+  color: white;
+  background-color: black;
+}
+
+#btnVoltarTelaLogin{
+  width: 90%;
+  height: 3rem;
+  background-color:black;
+  color: white;
+  border: 0;
+  border-radius: 0.3rem;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.esspacoAvisoSenha {
+  width: 90%;
+  height: auto;
+  display: flex;
+  text-align: start;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.esspacoAvisoSenha p {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.senhaValida p {
+  color: green;
+}
+
+.senhaInvalida p {
+  color: black
+}
+
+.bi-eye-fill, .bi-eye-slash-fill {
+  width: auto;
+  height: auto;
+  font-size: 1.3rem;
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  cursor: pointer;
+  color: black;
+  transition: 0.3s ease-in-out;
+}
+
+.bi-eye-fill:hover, .bi-eye-slash-fill:hover {
+  color: black;
+}
+
+@media (max-width: 600px) {
+  .ladoImagem {
+      display: none;
+  }
+
+  .espacoCadastro {
+      width: 100%;
+      height: 100%;
+  }
+
+  .blocoDosInputs {
+      width: 80%;
+  }
+}
