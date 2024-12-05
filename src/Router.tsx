@@ -3,8 +3,8 @@ import { Route, Routes } from "react-router-dom";
 import Login from "./Pages/Login/Login";
 import CadastroPage from "./Pages/Cadastro/Cadastro";
 import { PrivateRoute } from "./PrivateRotas/Private";
-import Home from "./Pages/Home/Home";
-import Lançamento from "./Pages/Lançamento/Lançamento";
+import Inicio from "./Pages/inicio/inicio";
+import Lancamentos from "./Pages/Lancamentos/Lancamentos";
 import UnidadeLoterica from "./Pages/UnidadeLoterica/UnidadeLoterica";
 import CobrancaDiaria from "./Pages/CobrancaDiaria/CobrancaDiaria";
 import PassagemAtendente from "./Pages/PassagemAtendente/PassagemAtendente";
@@ -19,8 +19,8 @@ const MainRoutes: React.FC = () => {
             <Route path="/" element={<Login />} />
             <Route path="/cadastro" element={<CadastroPage/>} />
             <Route path="/" element={<PrivateRoute />}>
-                <Route path="/home" element={<Home />} />
-                <Route path="/lancamento" element={<Lançamento />} />
+                <Route path="/inicio" element={<Inicio />} />
+                <Route path="/lancamento" element={<Lancamentos />} />
                 <Route path="/unidadeLoterica" element={<UnidadeLoterica />} />
                 <Route path="/cobrancaDiaria" element={<CobrancaDiaria />} />
                 <Route path="/passagemAtendente" element={<PassagemAtendente />} />

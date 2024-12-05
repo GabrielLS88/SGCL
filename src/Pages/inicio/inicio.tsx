@@ -1,4 +1,4 @@
-import './ControleEstoque.css';
+import './inicio.css';
 //import React, { useState, useEffect } from 'react';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
@@ -11,7 +11,7 @@ const Lançamento: React.FC = () => {
   return (
     <div className='bodyLancamento'>
       <div className="spaceNavBar">
-      <div className="spacoElementosNavegacao">
+        <div className="spacoElementosNavegacao" style={{ backgroundColor: "#2e31e934", borderRadius: "0px 15px 15px 0px" }}>
           <a href="/inicio">📁 Início</a>
         </div>
         <div className="spacoElementosNavegacao">
@@ -32,7 +32,7 @@ const Lançamento: React.FC = () => {
         <div className="spacoElementosNavegacao">
           <a href="/tarifacao">📁 Tarifação</a>
         </div>
-        <div className="spacoElementosNavegacao" style={{ backgroundColor: "#2e31e934", borderRadius: "0px 15px 15px 0px" }}>
+        <div className="spacoElementosNavegacao">
           <a href="/controleEstoque">📁 Controle de Estoque</a>
         </div>
         <div className="spacoElementosNavegacao">

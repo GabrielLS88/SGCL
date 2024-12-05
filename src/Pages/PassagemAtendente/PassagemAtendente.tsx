@@ -1,123 +1,94 @@
 import './PassagemAtendente.css';
-import ImagemUser from '../../assets/portrait-man-laughing.jpg';
-import React, { useState, useEffect } from 'react';
+//import React, { useState, useEffect } from 'react';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
-interface DropdownState {
-  [key: string]: boolean;
-}
+const Lançamento: React.FC = () => {
 
-const PassagemAtendente: React.FC = () => {
-  const [dropdownOpen, setDropdownOpen] = useState<DropdownState>({});
-  const [chevronUp, setChevronUp] = useState<DropdownState>({});
-
-  const toggleDropdown = (dropdown: string) => {
-    setDropdownOpen((prev) => {
-      const newState: DropdownState = { [dropdown]: !prev[dropdown] };
-      Object.keys(prev).forEach((key) => {
-        if (key !== dropdown) {
-          newState[key] = false;
-        }
-      });
-      return newState;
-    });
-    setChevronUp((prev) => {
-      const newState: DropdownState = { [dropdown]: !prev[dropdown] };
-      Object.keys(prev).forEach((key) => {
-        if (key !== dropdown) {
-          newState[key] = false;
-        }
-      });
-      return newState;
-    });
-  };
-
-  useEffect(() => {
-    let timeoutId: NodeJS.Timeout;
-
-    Object.keys(dropdownOpen).forEach((dropdown) => {
-      if (dropdownOpen[dropdown]) {
-        timeoutId = setTimeout(() => {
-          setDropdownOpen((prev) => ({ ...prev, [dropdown]: false }));
-          setChevronUp((prev) => ({ ...prev, [dropdown]: false }));
-        }, 10000);
-      }
-    });
-
-    return () => {
-      clearTimeout(timeoutId);
-    };
-  }, [dropdownOpen]);
-
-  const filterOptions: { [key: string]: string[] } = {
-    'Classificação': ['Nome', 'Data de modificação', 'Tipo', 'Mais'],
-    'Visualização': ['Detalhes', 'Icones Pequenos', 'Icones médios', 'Icones Grandes'],
-  };
+  function acionamentoAjuda() {
+    alert("help")
+  }
 
   return (
-    <div className="body-header">
-      <div className="menu-sidebar">
-        <div className="user-section">
-          <img src={ImagemUser} alt="User" />
-          <button className='user-button' onClick={() => toggleDropdown('user')}>Admin{' '}<i className={`bi ${chevronUp['user'] ? 'bi-chevron-up' : 'bi-chevron-down'}`}></i></button>
-          <div className={`dropdown-menu ${dropdownOpen['user'] ? 'active' : ''}`}>
-            <a href="#" className="dropdown-item">Perfil</a>
-            <a href="#" className="dropdown-item">Contrato</a>
-            <a href="/" className="dropdown-item">Sair</a>
+    <div className='bodyLancamento'>
+      <div className="spaceNavBar">
+      <div className="spacoElementosNavegacao">
+          <a href="/inicio">📁 Início</a>
+        </div>
+        <div className="spacoElementosNavegacao">
+          <a href="/lancamento">📁 Lançamento</a>
+        </div>
+        <div className="spacoElementosNavegacao">
+          <a href="/unidadeLoterica">📁 Unidade Lotérica</a>
+        </div>
+        <div className="spacoElementosNavegacao">
+          <a href="/cobrancaDiaria">📁 Cobrança Diária</a>
+        </div>
+        <div className="spacoElementosNavegacao" style={{ backgroundColor: "#2e31e934", borderRadius: "0px 15px 15px 0px" }}>
+          <a href="/passagemAtendente">📁 Passagem Atendente</a>
+        </div>
+        <div className="spacoElementosNavegacao">
+          <a href="/resumoOperador">📁 Resumo do Operador</a>
+        </div>
+        <div className="spacoElementosNavegacao">
+          <a href="/tarifacao">📁 Tarifação</a>
+        </div>
+        <div className="spacoElementosNavegacao">
+          <a href="/controleEstoque">📁 Controle de Estoque</a>
+        </div>
+        <div className="spacoElementosNavegacao">
+          <a href="/emissaoRelatorio">📁 Emissão de Relátorio</a>
+        </div>
+        <div className="spacoElementosNavegacao">
+          <a href="#">📁 Favoritos</a>
+        </div>
+        <div className="spacoElementoDateLicenci">
+          <div className="spaceAboutTitleDate">
+            <p>Licença até:</p>
           </div>
-          <div className="bell-icon"><i className="bi bi-bell-fill"></i></div>
-        </div>
-        <div className="menu-links">
-          {[
-            { icon: 'bi-rocket-fill', text: 'Lançamento',referencia: '/lancamento'},
-            { icon: 'bi-bank2', text: 'Unidade Lotérica',referencia: '/unidadeLoterica' },
-            { icon: 'bi-bank', text: 'Cobrança Diária',referencia: '/cobrancaDiaria'},
-            { icon: 'bi-person-circle', text: 'Passagem Atendente',referencia: '/passagemAtendente'},
-            { icon: 'bi-headset', text: 'Resumo do Operador',referencia: '/resumoOperador'},
-            { icon: 'bi-cash-coin', text: 'Tarifação',referencia: '/tarifacao'},
-            { icon: 'bi-toggles2', text: 'Controle de Estoque',referencia: '/controleEstoque'},
-            { icon: 'bi-bell-fill', text: 'Emissão de relatório',referencia: '/emissaoRelatorio'},
-          ].map((link, index) => (
-            <a key={index} className='navigation-link' href={link.referencia}><i className={`bi ${link.icon}`}></i>{link.text}</a>
-          ))}
-        </div>
-        <div className="blocoDataLiberacao">
-          <p>Lincença até:</p>
-          <h1>12/12/2024</h1>
+          <div className="spacoParaReceberDate">
+            <p>31/12/2024</p>
+          </div>
         </div>
       </div>
-      <div className="content-section">
-        <div className="top-menu">
-          <div className="filter-options">
-            {['Classificação', 'Visualização'].map((filter, index) => (
-              <div key={index}>
-                <button className='user-button-header' onClick={() => toggleDropdown(filter)}>{filter}{' '}<i className={`bi ${chevronUp[filter] ? 'bi-chevron-up' : 'bi-chevron-down'}`}></i></button>
-                <div className={`dropdown-menu-header ${dropdownOpen[filter] ? 'active' : ''}`}>
-                  {filterOptions[filter].map((item, idx) => (
-                    <a key={idx} href="#" className="dropdown-item">{item}</a>
-                  ))}
-                </div>
+      <div className="spaceSubMenuAndBodyPrincipal">
+        <div className="spaceParaSubMenuInicio">
+          <div className="spaceSubNavegacao">
+            <div className="spaceForTextSelect">
+              <a href="#" id='navegacaoSubMenuClassificacao'>Classificação</a>
+              <i className="bi bi-chevron-down"></i>
+              <div className="spaceSubOptionNavegacaoClassificacao">
+                <a href="#">Teste 1</a>
+                <a href="#">Teste 2</a>
               </div>
-            ))}
-          </div>
-          <div className="search-and-help">
-            <div className="search-bar">
-              <input type="text" placeholder='Pesquisar...' />
-              <i className="bi bi-search"></i>
             </div>
-            <div className="help-icon">
-              <a href="#"><i className="bi bi-question"></i></a>
+            <div className="spaceForTextSelect">
+              <a href="#" id='navegacaoSubMenuVizualizacao'> Vizualização</a>
+              <i className="bi bi-chevron-down"></i>
+              <div className="spaceSubOptionNavegacaoVizualizacao">
+                <a href="#">Teste 1</a>
+                <a href="#">Teste 2</a>
+              </div>
+            </div>
+            <div className="spaceForTextSelect">
+              <a href="#">Pré-visualização</a>
+            </div>
+          </div>
+          <div className="spaceSearchAndHelp">
+            <div className="spaceInputAndAlert">
+              <div className="spacceSearchAndIcon">
+                <input type="text" placeholder='Search text' id="inputSearch" />
+                <button className='buttonSearchIcon'><i className="bi bi-search"></i></button>
+              </div>
+              <button id='buttonAlert' onClick={acionamentoAjuda}><i id='bellAlert' className="bi bi-bell-fill"></i></button>
             </div>
           </div>
         </div>
-        <div className="main-content">
-          <div className="tituloMain-content">
-            <h1>Passagem Atendente</h1>
-          </div>
+        <div className="spacoBodyDocumentos">
+
         </div>
       </div>
     </div>
   );
 }
 
-export default PassagemAtendente;
+export default Lançamento;

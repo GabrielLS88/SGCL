@@ -36,7 +36,7 @@ const Login: React.FC = () => {
       localStorage.setItem("token", token);
 
       setTimeout(() => {
-        window.location.href = "/home";
+        window.location.href = "/inicio";
       }, 1200);
     }
   };
