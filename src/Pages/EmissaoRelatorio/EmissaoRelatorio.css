@@ -227,7 +227,8 @@
     cursor: text;
     padding: 10px;
     outline: none;
-    background-color: #F0F0F0;
+    background-color: #4b4949;
+    color: white;
 }
 
 /* Button do icone search */
@@ -237,6 +238,8 @@
     border: none;
     border-radius: 0px 40px 40px 0px;
     cursor: pointer;
+    color: white;
+    background-color: #4b4949;
 }
 
 /* Botão de notificação */
