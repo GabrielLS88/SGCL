@@ -80,6 +80,12 @@ const Lançamento: React.FC = () => {
                 <button className='buttonSearchIcon'><i className="bi bi-search"></i></button>
               </div>
               <button id='buttonAlert' onClick={acionamentoAjuda}><i id='bellAlert' className="bi bi-bell-fill"></i></button>
+              <div className="spaceUserProfile">
+                <div className="profileUser">
+                  <a href="/">Perfil</a>
+                  <a href="/">Sair</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

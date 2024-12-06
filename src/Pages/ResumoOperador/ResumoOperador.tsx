@@ -11,7 +11,7 @@ const Lançamento: React.FC = () => {
   return (
     <div className='bodyLancamento'>
       <div className="spaceNavBar">
-      <div className="spacoElementosNavegacao">
+        <div className="spacoElementosNavegacao">
           <a href="/inicio">📁 Início</a>
         </div>
         <div className="spacoElementosNavegacao">
@@ -80,6 +80,12 @@ const Lançamento: React.FC = () => {
                 <button className='buttonSearchIcon'><i className="bi bi-search"></i></button>
               </div>
               <button id='buttonAlert' onClick={acionamentoAjuda}><i id='bellAlert' className="bi bi-bell-fill"></i></button>
+              <div className="spaceUserProfile">
+                <div className="profileUser">
+                  <a href="/">Perfil</a>
+                  <a href="/">Sair</a>F
+                </div>
+              </div>
             </div>
           </div>
         </div>
