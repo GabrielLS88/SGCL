@@ -1,10 +1,44 @@
 import './inicio.css';
-//import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+
+
+interface Lancamento {
+  id_lancamento: number,
+  nome: string,
+  date: string,
+  time: string,
+  descricao: string 
+}
+
+interface Props{
+  lancamentos: Lancamento[]
+}
+
+function clickButtonLancamentos(id_lancamentoClicado: number, nome_lancamento: string){
+  alert("Lançamento do id: " + id_lancamentoClicado + "\n" + "Nome do lançamento: " + nome_lancamento)
+}
+
+const Lancamentos: React.FC<Props> = ({ lancamentos }) => {
+  return (
+    <div className='spaceLancamento_create'>
+      {lancamentos.map((lancamento) => (
+        <div key={lancamento.id_lancamento} className='lancamento_card'> 
+          <button onClick={() => clickButtonLancamentos(lancamento.id_lancamento,lancamento.nome)}>📁 {lancamento.nome}</button>
+          <p>{lancamento.date} {lancamento.time}</p>
+          <p>{lancamento.descricao}</p>
+        </div>
+      ))}
+    </div>
+  )
+}
 
 const Lançamento: React.FC = () => {
 
-
+    const [data, setData] = useState<Lancamento[]>([
+      { id_lancamento: 1, nome: "Lançamento", date: "07/12/24", time: "14:00", descricao: "Lançamento 1" },
+      { id_lancamento: 2, nome: "Lançamento", date: "07/12/24", time: "14:00", descricao: "Lançamento 2" }
+    ]);
 
   function acionamentoAjuda() {
     alert("help")
@@ -12,6 +46,20 @@ const Lançamento: React.FC = () => {
 
   function pesquisaConsultada(){
     alert("consultou")
+  }
+
+  function novoLancamentoEvento(): void{
+    const valorDigitado = prompt("Qual o nome do lançamento?")
+    console.log(valorDigitado)
+    const novoLancamentoDados = {
+      "id_lancamento": data.length + 1,
+      "nome": valorDigitado || "Sem Nome",
+      "date": "07/12/24",
+      "time": "14:00",
+      "descricao": `Lançamento ${data.length + 1}`
+    }
+
+    setData((prevData) => [...prevData, novoLancamentoDados]);
   }
 
   return (
@@ -96,7 +144,16 @@ const Lançamento: React.FC = () => {
           </div>
         </div>
         <div className="spacoBodyDocumentos">
+          <div className="spaceLancamentos">
+            <div className="spaceTituloAndNewLancamento">
+              <h1>Lançamentos</h1>
+              <button onClick={novoLancamentoEvento}>+ novo</button>
+            </div>
+            <Lancamentos lancamentos={data} />
+          </div>
+          <div className="spaceFavorits">
 
+          </div>
         </div>
       </div>
     </div>

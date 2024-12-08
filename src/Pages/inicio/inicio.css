@@ -302,6 +302,73 @@
 .spacoBodyDocumentos{
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.628);
     border-radius: 50px 0px 0px 0px;
+}
+
+.spaceLancamentos{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.spaceTituloAndNewLancamento{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.spaceTituloAndNewLancamento h1{
+    font-size: 22px;
+}
+
+.spaceTituloAndNewLancamento button {
+    width: 80px;
+    height: 40px;
+    border-radius: 25px;
+    border: none;
+    background-color: #E9B52E;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+.spaceLancamento_create{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+    padding-top: 10px;
+}
+
+.lancamento_card{
+    width: 60%;
+    height: auto;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    margin-top: 15px;
+}
+
+.lancamento_card button{
+    border: none;
+    background-color: transparent;
+    font-size: 18px;
+    cursor: pointer;
+    width: 250px;
+    text-align: start;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+}
+
+.lancamento_card p{
+    font-size: 18px;
+    width: 200px;
 }
